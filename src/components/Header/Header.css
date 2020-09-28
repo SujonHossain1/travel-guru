@@ -1,0 +1,38 @@
+.logo-style{
+    width:110px;
+}
+
+.input-style::placeholder{
+    color: white !important;
+}
+.search-btn {
+    position: absolute;
+    left: 35px;
+    top: 9px;
+    height: 100%;
+    color: #fff;
+}
+.form-control{
+    background: transparent !important;
+    border: 1px solid #fff;
+    padding: 8px 40px !important;
+    color: white !important;
+    min-width: 300px !important;
+    outline: none;
+    margin-top: 0 !important;
+}
+.form-control:focus{
+    outline: none;
+    box-shadow: none !important;
+    border: 1px solid #fff !important;
+}
+.nav-link{
+    color: #fff !important;
+    padding: 8px 15px !important;
+}
+.btn-style {
+    background-color: #F9A51A !important;
+    color: black !important;
+    padding: 5px 20px !important;
+    text-align: center !important;
+  }

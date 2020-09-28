@@ -1,0 +1,61 @@
+.destination {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-style {
+    border: 4px solid darkorange;
+    border-radius: 15px;
+    height: 300px !important;
+}
+
+.destination-details {
+    color: #fff;
+}
+
+.destination-details h1 {
+    font-size: 65px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+
+}
+
+.img-overlay {
+    overflow: hidden;
+    position: relative;
+}
+
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(17deg, rgba(0, 0, 0,1), transparent);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    transition: 1.5s ease-in;
+    overflow: hidden;
+    color: white;
+    border-radius: 15px;
+}
+
+.active {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(17deg, rgba(0, 0, 0,0.1), transparent);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    transition: 1.5s ease-in;
+    overflow: hidden;
+    color: white;
+    border-radius: 15px;
+}
