@@ -1,33 +1,44 @@
 import React from 'react';
 import './Header.css';
-import { Navbar, Nav, Container, Form, FormControl, Button } from 'react-bootstrap';
-// import logo from '../../images/icons/logo.png';
+import { Navbar, Nav, Container, Form } from 'react-bootstrap';
 import logo from '../../logo.svg';
-
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <Navbar expand="md" className="navbar-dark">
+        <Navbar expand="md" className="navbar-light">
             <Container>
-                <Navbar.Brand href="#home">
-                    <img className="logo-style" src={logo} alt="" />
-                </Navbar.Brand>
+                <Link to="/">
+                    <Navbar.Brand >
+                        <img className="logo-style" src={logo} alt="" />
+                    </Navbar.Brand>
+                </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Form inline className="mr-auto position-relative">
-                        <span className="search-btn"> <i class="fas fa-search"></i></span>
-                        <FormControl
+                        <span className="search-btn"> <i className="fas fa-search"></i></span>
+                        <input
                             type="text"
                             placeholder="Search Your Destination..."
-                            className=" ml-4 input-style"
+                            className="input-style form-control ml-4 "
                         />
                     </Form>
                     <Nav className="ml-auto">
-                        <Nav.Link href="home">News</Nav.Link>
-                        <Nav.Link href="#link">Destination</Nav.Link>
-                        <Nav.Link href="#link">Blog</Nav.Link>
-                        <Nav.Link href="#link">Contact</Nav.Link>
-                        <Nav.Link className="btn  btn-style " href="#link">Login</Nav.Link>
+                        <Link className="nav-item" to="/">
+                            <span className="nav-link"> News </span>
+                        </Link>
+                        <Link className="nav-item" to="/">
+                            <span className="nav-link"> Destination </span>
+                        </Link>
+                        <Link className="nav-item" to="/">
+                            <span className="nav-link"> Blog </span>
+                        </Link>
+                        <Link className="nav-item" to="/">
+                            <span className="nav-link"> Contact </span>
+                        </Link>
+                        <Link className="nav-item" to="/login">
+                            <button className="btn btn-warning"> Login</button>
+                        </Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

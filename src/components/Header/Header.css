@@ -12,7 +12,7 @@
     height: 100%;
     color: #fff;
 }
-.form-control{
+.input-style.form-control{
     background: transparent !important;
     border: 1px solid #fff;
     padding: 8px 40px !important;
@@ -21,7 +21,7 @@
     outline: none;
     margin-top: 0 !important;
 }
-.form-control:focus{
+.input-style.form-control:focus{
     outline: none;
     box-shadow: none !important;
     border: 1px solid #fff !important;
@@ -30,9 +30,10 @@
     color: #fff !important;
     padding: 8px 15px !important;
 }
-.btn-style {
-    background-color: #F9A51A !important;
-    color: black !important;
-    padding: 5px 20px !important;
-    text-align: center !important;
-  }
+.nav-item{
+    text-decoration: none !important;
+}
+.btn-warning{
+    background-color:  #F9A51A !important;
+    color: #000 !important;
+}

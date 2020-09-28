@@ -1,0 +1,46 @@
+.login-form-style .form-control{
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    font-size: 15px;
+    border-radius: 0px;
+    color: #495057;
+    padding-left: 0px !important;
+    margin-top: 8px;
+}
+
+.login-form-style .form-control::placeholder{
+    font-size: 15px;
+}
+.login-form-style .form-control:focus{
+    box-shadow: none;
+    background: transparent;
+}
+
+.have-account{
+    font-size: 14px;
+    margin-top: 18px;
+    text-align: center;
+}
+.have-account span{
+    text-decoration: underline;
+    color:  #F9A51A;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.login-with{
+    border: 1px solid #ced4da;
+    border-radius: 25px;
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+.login-with:hover{
+    border: 1px solid #a2a7ac;
+}
+.login-with img{
+    width:30px;
+    position: absolute;
+    left: 10px;
+    bottom: 7px;
+}

@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "location": "Cox's Bazar",
+        "description": "Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds",
+        "destination":"coxs-bazar"
+    },
+    {
+        "id": 2,
+        "location": "Sreemongol",
+        "description": "Sreemangal is situated in Moulvibazar district in sylhet division. Sreemangal is an Upazila. It is famous for tea garden. Rain all time occurs here. Nature has adorned sreemangal with green tress. Its natural scenery is very charming. It soothes one’s eyes. Birds are twittering always here. The first tea garden in Bangladesh which names “Malni chho ra tea garden” is here",
+        "destination":"sreemongol"
+    }, 
+    {
+        "id": 3,
+        "location": "Sajek Valley",
+        "description": "Sajek is a union located in the north of Chittagong Hill Tracts. It's under Baghaichori Upazila in Rangamati hill district, it is situated 67 kilometres (42 mi) north-east from Khagrachhari town and 95 kilometres (59 mi) north from Rangamati city",
+        "destination":"sajek"
+    }
+]
