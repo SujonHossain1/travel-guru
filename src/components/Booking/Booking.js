@@ -18,7 +18,7 @@ const Booking = () => {
                     </div>
                 </Col>
                 <Col md={5}>
-                    <div className="booking-cart">
+                    <div className="booking-cart pb-5">
                         <Form>
                             <Form.Group controlId="origin">
                                 <Form.Label>Origin</Form.Label>

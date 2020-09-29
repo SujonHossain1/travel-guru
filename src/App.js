@@ -9,6 +9,8 @@ import {
 } from 'react-router-dom';
 import Booking from './components/Booking/Booking';
 import Login from './components/Login/Login';
+import HotelDetails from './components/HotelDetails/HotelDetails';
+import BedroomDetails from './components/BedroomDetails/BedroomDetails';
 
 export const LocationContext = createContext();
 export const UserContext = createContext();
@@ -43,6 +45,12 @@ function App() {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/hotel-details">
+            <HotelDetails/>
+          </Route>
+          <Route path="/bedroom-details/:bedroomId">
+            <BedroomDetails/>
           </Route>
         </Router>
       </LocationContext.Provider>

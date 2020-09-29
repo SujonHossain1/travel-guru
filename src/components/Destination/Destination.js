@@ -2,9 +2,6 @@ import React, { useContext, useState } from 'react';
 import './Destination.css';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import img1 from '../../images/Rectangle-1.png';
-import img2 from '../../images/sundorbon.png';
-import img3 from '../../images/Sreemongol.png';
 import data from '../../data/destination.json';
 import { LocationContext } from '../../App';
 
@@ -43,17 +40,20 @@ const Destination = () => {
 
                 <Col lg={7}>
                     <Row >
-                        <Col onClick={() => handleDestination("coxs-bazar")}  lg={4} className="p-3">
+                        <Col onClick={() => handleDestination("coxs-bazar")} lg={4} className="p-3">
                             <div className="img-overlay">
-                                <img className="img-style img-fluid" src={img1} alt="" />
-                                <div className={selectedDestination === 'coxs-bazar' ? "active-overlay" : "overlay"}>
+                                <div className="img-style img1"></div>
+                                <div className={selectedDestination === 'coxs-bazar' ?
+                                    "active-overlay"
+                                    : "overlay"
+                                }>
                                     <h2>Cox's Bazar</h2>
                                 </div>
                             </div>
                         </Col>
                         <Col onClick={() => handleDestination("sreemongol")} lg={4} className="p-3">
                             <div className="img-overlay">
-                                <img className=" img-fluid" src={img3} alt="" />
+                                <div className="img-style img2"></div>
                                 <div className={selectedDestination === 'sreemongol' ? "active-overlay" : "overlay"}>
                                     <h2>Sreemongol</h2>
                                 </div>
@@ -61,12 +61,13 @@ const Destination = () => {
                         </Col>
                         <Col onClick={() => handleDestination("sundarbans")} lg={4} className="p-3">
                             <div className="img-overlay">
-                                <img className="img-fluid" src={img2} alt="" />
-                                <div className={selectedDestination ==='sundarbans' ? "active-overlay" : "overlay"}>
+                                <div className="img-style img3"></div>
+                                <div className={selectedDestination === 'sundarbans' ? "active-overlay" : "overlay"}>
                                     <h2>Sundarbans</h2>
                                 </div>
                             </div>
                         </Col>
+                        
                     </Row>
                 </Col>
             </Row>

@@ -1,0 +1,28 @@
+
+.link{
+    text-decoration: none;
+    color: black;
+}
+.link:hover{
+    text-decoration: none;
+    color: black;
+}
+.hotel-item-beds{
+    font-size: 13px;
+    color: #9b9999;
+    font-weight: 600;
+}
+.hotel-item-beds span{
+    margin-right: 5px;
+}
+.hotel-item-count{
+    font-size: 14px;
+    font-weight: 600;
+}
+.hotel-item-count span{
+    margin-right: 5px;
+}
+.hotel-item-details p{
+    font-size: 15px;
+    line-height: 12px;
+}

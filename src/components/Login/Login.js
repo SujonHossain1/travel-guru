@@ -176,9 +176,10 @@ const Login = () => {
                         {loggedInUser.isValidEmail === false && <span> Please verify your Email Address</span>}
                     </p>
                 </Col>
+                    
+                < p style={{ fontSize: '21', fontWeight: '600'}} className="mt-3 text-center">Or</p>
 
-
-                <Col md={5} className="mx-auto py-3">
+                <Col md={5} className="mx-auto pb-3">
                     <div onClick={signInFacebook} className="login-with">
                         <img src={facebook} alt="" />
                         <span>Continue with Facebook</span>

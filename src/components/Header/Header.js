@@ -1,20 +1,20 @@
 import React from 'react';
 import './Header.css';
 import { Navbar, Nav, Container, Form } from 'react-bootstrap';
-import logo from '../../logo.svg';
+import logo from '../../images/logo.png';
 import logo2 from '../../images/icons/logo.png';
 import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
     const { pathname } = useLocation()
-    let brandImage = logo;
+    let brandImage = logo2;
     let navLinkColor = {
-        color: 'white'
+        color: 'black'
     }
-    if (pathname === '/login' || pathname === '/dest') {
-        brandImage = logo2;
+    if (pathname === '/' || pathname === '/booking') {
+        brandImage = logo;
         navLinkColor = {
-            color: 'black'
+            color: 'white'
         }
     }
 
@@ -43,8 +43,8 @@ const Header = () => {
                         <Link className="nav-item" to="/">
                             <span style={navLinkColor} className="nav-link"> Destination </span>
                         </Link>
-                        <Link className="nav-item" to="/">
-                            <span style={navLinkColor} className="nav-link"> Blog </span>
+                        <Link className="nav-item" to="/hotel-details">
+                            <span style={navLinkColor} className="nav-link"> Hotel Details </span>
                         </Link>
                         <Link className="nav-item" to="/">
                             <span style={navLinkColor} className="nav-link"> Contact </span>
