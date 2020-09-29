@@ -13,8 +13,8 @@
     }, 
     {
         "id": 3,
-        "location": "Sajek Valley",
-        "description": "Sajek is a union located in the north of Chittagong Hill Tracts. It's under Baghaichori Upazila in Rangamati hill district, it is situated 67 kilometres (42 mi) north-east from Khagrachhari town and 95 kilometres (59 mi) north from Rangamati city",
-        "destination":"sajek"
+        "location": "Sundarbans",
+        "description": "The Sundarbans is a mangrove area in the delta formed by the confluence of the Ganges, Brahmaputra and Meghna Rivers in the Bay of Bengal. It spans from the Hooghly River in India's state of West Bengal to the Baleswar River in Bangladesh.",
+        "destination":"sundarbans"
     }
 ]

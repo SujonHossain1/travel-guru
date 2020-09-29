@@ -20,10 +20,9 @@ function App() {
     name: '',
     email: '',
     photo: '',
-    isValidEmail: false,
+    isValidEmail: null,
     isSignIn: false,
-    successMessage: '',
-    errorMessage: ''
+    error: ''
   })
 
   return (

@@ -27,7 +27,7 @@ const Destination = () => {
     return (
         <Container className="location-layout">
             <Row>
-                <Col md={5} >
+                <Col lg={5} >
                     <div className="location-details">
                         <h1> {locationData.location} </h1>
                         <p>
@@ -41,9 +41,9 @@ const Destination = () => {
                     </div>
                 </Col>
 
-                <Col md={7}>
+                <Col lg={7}>
                     <Row >
-                        <Col onClick={() => handleDestination("coxs-bazar")} md={4} className="p-3">
+                        <Col onClick={() => handleDestination("coxs-bazar")}  lg={4} className="p-3">
                             <div className="img-overlay">
                                 <img className="img-style img-fluid" src={img1} alt="" />
                                 <div className={selectedDestination === 'coxs-bazar' ? "active-overlay" : "overlay"}>
@@ -51,19 +51,19 @@ const Destination = () => {
                                 </div>
                             </div>
                         </Col>
-                        <Col onClick={() => handleDestination("sreemongol")} md={4} className="p-3">
+                        <Col onClick={() => handleDestination("sreemongol")} lg={4} className="p-3">
                             <div className="img-overlay">
-                                <img className=" img-fluid" src={img2} alt="" />
+                                <img className=" img-fluid" src={img3} alt="" />
                                 <div className={selectedDestination === 'sreemongol' ? "active-overlay" : "overlay"}>
                                     <h2>Sreemongol</h2>
                                 </div>
                             </div>
                         </Col>
-                        <Col onClick={() => handleDestination("sajek")} md={4} className="p-3">
+                        <Col onClick={() => handleDestination("sundarbans")} lg={4} className="p-3">
                             <div className="img-overlay">
-                                <img className="img-fluid" src={img3} alt="" />
-                                <div className={selectedDestination === 'sajek' ? "active-overlay" : "overlay"}>
-                                    <h2>Sajek Valley</h2>
+                                <img className="img-fluid" src={img2} alt="" />
+                                <div className={selectedDestination ==='sundarbans' ? "active-overlay" : "overlay"}>
+                                    <h2>Sundarbans</h2>
                                 </div>
                             </div>
                         </Col>

@@ -26,6 +26,28 @@ header {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
+}
+/* 
+@media (min-width: 768px) and (max-width: 991.98px) { 
+  header {
+
+    height: 100vh;
+    width: 100vw;
+  }
+ } */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  header {
+   
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  header {
+    height: 100vh;
+    width: 100vw;
+  }
 }

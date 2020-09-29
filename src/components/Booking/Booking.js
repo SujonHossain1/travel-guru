@@ -2,9 +2,10 @@ import React, { useContext } from 'react';
 import './Booking.css';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import { LocationContext } from '../../App';
+import { Link } from 'react-router-dom';
 
 const Booking = () => {
-    const [locationData, setLocationData] = useContext(LocationContext);
+    const [locationData] = useContext(LocationContext);
 
     return (
         <Container className="location-layout">
@@ -39,7 +40,11 @@ const Booking = () => {
                                 </Form.Group>
 
                             </Form.Row>
-                            <Button className="btn-block btn-warning py-2"> Starting Booking</Button>
+                            <Button className="btn-block btn-warning py-2">
+                                <Link to="/login" style={{ textDecoration: "none", color: "#000" }}>
+                                    Starting Booking
+                                </Link>
+                            </Button>
                         </Form>
                     </div>
                 </Col>

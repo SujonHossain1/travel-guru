@@ -1,12 +1,29 @@
 .location-layout {
-    height: 80vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
+/* @media (min-width: 768px) and (max-width: 991.98px) { 
+    .location-layout {
+        height: 80vh;
+        
+    }
+} */
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .location-layout {
+        height: 80vh;
+       
+    }
+ }
+@media (min-width: 1200px) { 
+    .location-layout {
+        height: 80vh;
+    }
+ }
 
 .img-style {
-   
     border-radius: 15px;
     height: 300px !important;
 }
@@ -25,6 +42,7 @@
 .img-overlay {
     overflow: hidden;
     position: relative;
+    cursor: pointer;
 }
 
 
