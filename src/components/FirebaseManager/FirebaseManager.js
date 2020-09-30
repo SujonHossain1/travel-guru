@@ -44,7 +44,17 @@ export const signUpWithEmailAndPassword = (name, email, password) => {
             }).then(() => {
                 verifyEmailAddress();
                 console.log(res)
-                return successfulResponse(res)
+                const { displayName, email, photoURL } = res.user;
+                return ((prevData) => {
+                    return {
+                        ...prevData,
+                        name: displayName,
+                        email,
+                        photo: photoURL,
+                        isSignIn: true,
+                        error: null
+                    }
+                })
             });
         })
         .catch(error => {
@@ -68,7 +78,7 @@ export const signInWithEmailAndPasswordOwn = (email, password) => {
 const verifyEmailAddress = () => {
     firebase.auth().currentUser.sendEmailVerification()
         .then(res => {
-            console.log("Verify Email Send", res);
+            console.log("Send Verified Sms", res);
         }).catch(error => {
             console.log(error)
         });
@@ -76,7 +86,6 @@ const verifyEmailAddress = () => {
 
 
 // Reset and update password
-
 export const resetPassword = (emailAddress) => {
     firebase.auth().sendPasswordResetEmail(emailAddress)
         .then(res => {
@@ -85,7 +94,6 @@ export const resetPassword = (emailAddress) => {
             //happened An error .
         });
 }
-
 
 // if response successful
 function successfulResponse(res) {
@@ -98,12 +106,10 @@ function successfulResponse(res) {
             photo: photoURL,
             isValidEmail: emailVerified,
             isSignIn: true,
-            error: ''
+            error: null
         }
     })
 }
-
-
 
 // if response error 
 function errorResponse(error) {

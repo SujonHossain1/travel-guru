@@ -9,6 +9,7 @@ import {
     signInWithEmailAndPasswordOwn,
     signInWithFacebook
 } from '../FirebaseManager/FirebaseManager';
+import { useHistory, useLocation } from 'react-router-dom';
 import facebook from '../../images/icons/fb.png';
 import google from '../../images/icons/google.png';
 import { UserContext } from '../../App';
@@ -21,18 +22,27 @@ const Login = () => {
     const { register, handleSubmit, watch, errors } = useForm();
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [newUser, setNewUser] = useState(true);
+    const [sendMail, setSendMail] = useState(false);
 
 
 
     initializeAppFirebase();
+    const history = useHistory();
+    const location = useLocation();
 
+    let { from } = location.state || { from: { pathname: "/" } };
+
+
+    if (sendMail) {
+        setTimeout(() => setSendMail(false), 3000);
+    }
 
     // SignIn With Google
     const signInGoogle = () => {
         signInWithGoogle()
             .then(res => {
                 setLoggedInUser(res);
-
+                history.replace(from);
             })
             .catch(err => {
                 setLoggedInUser(err);
@@ -44,6 +54,7 @@ const Login = () => {
         signInWithFacebook()
             .then(res => {
                 setLoggedInUser(res);
+                history.replace(from);
             })
             .catch(err => {
                 setLoggedInUser(err);
@@ -59,11 +70,23 @@ const Login = () => {
             signUpWithEmailAndPassword(name, email, confirmPassword)
                 .then(res => {
                     setLoggedInUser(res);
-                    setNewUser(false);
+
+                    if (loggedInUser.error) {
+                        setNewUser(true);
+                    }
+                    else {
+                        setNewUser(false)
+                        if (newUser) {
+                            setSendMail(true);
+                        }
+                    }
+
                     event.target.reset();
                 })
                 .catch(err => {
                     setLoggedInUser(err);
+                    setNewUser(true);
+                    history.replace('/login');
                 })
         }
 
@@ -71,9 +94,14 @@ const Login = () => {
             signInWithEmailAndPasswordOwn(email, password)
                 .then(res => {
                     setLoggedInUser(res);
+                    if(loggedInUser.isValidEmail){
+                        history.replace(from);
+                    }
+                    
                 })
                 .catch(err => {
                     setLoggedInUser(err);
+                    history.replace('/login');
                 })
         }
     }
@@ -82,11 +110,20 @@ const Login = () => {
 
     return (
         <>
-        <Header/>
+            <Header />
             <Container >
                 <Col md={6} className="mx-auto p-4 mt-3" style={{ border: '1px solid #ced4da' }}>
                     <Form onSubmit={handleSubmit(onSubmit)} className="login-form-style">
-                        < p style={{ fontSize: '21', fontWeight: '600' }}>Create An Account</p>
+                        {
+                            sendMail && <div className="verified">
+                                <h4>Verification mail sent!</h4>
+                            </div>
+                        }
+
+
+                        < p style={{ fontSize: '21', fontWeight: '600' }}>
+                            {newUser ? 'Create An Account' : 'Login Now'}
+                        </p>
                         {newUser && <>
                             <Form.Group>
                                 <Form.Control
@@ -118,7 +155,7 @@ const Login = () => {
                                 ref={register({
                                     required: "Email is required",
                                     pattern: {
-                                        value: /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
+                                        value: /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/,
                                         message: "Invalid email address"
                                     }
                                 })}
@@ -133,8 +170,8 @@ const Login = () => {
                                 ref={register({
                                     required: "Password is required",
                                     minLength: {
-                                        value: 5,
-                                        message: 'Password Must Be at least 5 Characters'
+                                        value: 6,
+                                        message: 'Password Must Be at least 6 Characters'
                                     }
                                 })}
                                 type="password"
@@ -157,8 +194,8 @@ const Login = () => {
                             </Form.Group>
                         }
                         {
-                            newUser=== false && <Form.Group className=" py-2 d-flex justify-content-between">
-                                <Form.Check style={{fontSize: '14px'}} type="checkbox" label="Remember Me" />
+                            newUser === false && <Form.Group className=" py-2 d-flex justify-content-between">
+                                <Form.Check style={{ fontSize: '14px' }} type="checkbox" label="Remember Me" />
                                 <span className="forget">Forget Your Password</span>
                             </Form.Group>
                         }
@@ -171,13 +208,16 @@ const Login = () => {
                             {newUser ? 'Already have an account? ' : "Don't have an account ?"}
                             <span onClick={() => setNewUser(!newUser)}> {newUser ? 'Login' : 'Create an account'} </span>
                         </p>
+                        <p style={{ color: 'red', fontSize: '14px', textAlign: 'center' }}> {loggedInUser.error} </p>
                     </Form>
-                    <p className="have-account">
-                        {loggedInUser.isValidEmail === false && <span> Please verify your Email Address</span>}
+                    <p style={{ color: 'red', fontSize: '14px', textAlign: 'center' }}>
+                        {loggedInUser.isValidEmail === false && <span>
+                            Email Not verified ! Please check your mail.
+                            </span>}
                     </p>
                 </Col>
-                    
-                < p style={{ fontSize: '21', fontWeight: '600'}} className="mt-3 text-center">Or</p>
+
+                < p style={{ fontSize: '21', fontWeight: '600' }} className="mt-3 text-center">Or</p>
 
                 <Col md={5} className="mx-auto pb-3">
                     <div onClick={signInFacebook} className="login-with">

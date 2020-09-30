@@ -11,6 +11,7 @@ import Booking from './components/Booking/Booking';
 import Login from './components/Login/Login';
 import HotelDetails from './components/HotelDetails/HotelDetails';
 import BedroomDetails from './components/BedroomDetails/BedroomDetails';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export const LocationContext = createContext();
 export const UserContext = createContext();
@@ -24,8 +25,12 @@ function App() {
     photo: '',
     isValidEmail: null,
     isSignIn: false,
-    error: ''
+    error: null
   })
+
+  // if(loggedInUser.error){
+  //   setTimeout(() => {setLoggedInUser({error: ''})}, 3000);
+  // }
 
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
@@ -46,9 +51,9 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/hotel-details">
+          <PrivateRoute path="/hotel-details">
             <HotelDetails/>
-          </Route>
+          </PrivateRoute>
           <Route path="/bedroom-details/:bedroomId">
             <BedroomDetails/>
           </Route>
