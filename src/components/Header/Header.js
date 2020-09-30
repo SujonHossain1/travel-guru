@@ -11,7 +11,7 @@ const Header = () => {
     let navLinkColor = {
         color: 'black'
     }
-    if (pathname === '/' || pathname === '/booking') {
+    if (pathname === '/' || pathname === '/booking' || pathname === '/contact') {
         brandImage = logo;
         navLinkColor = {
             color: 'white'
@@ -46,7 +46,7 @@ const Header = () => {
                         <Link className="nav-item" to="/hotel-details">
                             <span style={navLinkColor} className="nav-link"> Hotel Details </span>
                         </Link>
-                        <Link className="nav-item" to="/">
+                        <Link className="nav-item" to="/contact">
                             <span style={navLinkColor} className="nav-link"> Contact </span>
                         </Link>
                         <Link className="nav-item" to="/login">

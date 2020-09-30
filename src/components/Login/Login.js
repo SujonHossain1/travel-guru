@@ -72,9 +72,10 @@ const Login = () => {
                     setLoggedInUser(res);
 
                     if (loggedInUser.error) {
-                        setNewUser(true);
+                        setNewUser(true)
                     }
                     else {
+                        
                         setNewUser(false)
                         if (newUser) {
                             setSendMail(true);
@@ -94,10 +95,10 @@ const Login = () => {
             signInWithEmailAndPasswordOwn(email, password)
                 .then(res => {
                     setLoggedInUser(res);
-                    if(loggedInUser.isValidEmail){
+                    if (loggedInUser.isValidEmail) {
                         history.replace(from);
                     }
-                    
+
                 })
                 .catch(err => {
                     setLoggedInUser(err);
@@ -107,6 +108,7 @@ const Login = () => {
     }
 
 
+    
 
     return (
         <>
@@ -210,10 +212,10 @@ const Login = () => {
                         </p>
                         <p style={{ color: 'red', fontSize: '14px', textAlign: 'center' }}> {loggedInUser.error} </p>
                     </Form>
-                    <p style={{ color: 'red', fontSize: '14px', textAlign: 'center' }}>
+                    <p className="error">
                         {loggedInUser.isValidEmail === false && <span>
                             Email Not verified ! Please check your mail.
-                            </span>}
+                        </span>}
                     </p>
                 </Col>
 
